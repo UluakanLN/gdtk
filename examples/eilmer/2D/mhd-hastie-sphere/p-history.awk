@@ -1,6 +1,8 @@
 
+# p-history.awk
+
 BEGIN {
-    print "t,ms p"
+    print "#t,ms p"
 }
 
 $1 !="#"{
