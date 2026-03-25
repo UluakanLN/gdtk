@@ -1,0 +1,9 @@
+# indx type label ncells
+   0 structured_grid FBArray-0-blk-1-1 500
+   1 structured_grid FBArray-0-blk-2-1 500
+   2 structured_grid FBArray-0-blk-3-1 500
+   3 structured_grid FBArray-0-blk-4-1 500
+   4 structured_grid FBArray-0-blk-5-1 500
+   5 structured_grid FBArray-0-blk-6-1 500
+   6 structured_grid FBArray-0-blk-7-1 500
+   7 structured_grid FBArray-0-blk-8-1 500

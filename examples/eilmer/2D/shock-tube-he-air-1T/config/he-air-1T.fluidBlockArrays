@@ -1,0 +1,59 @@
+-- A description of the fluidBlockArrays in Lua code.
+-- Use dofile() to get the content into your interpreter.
+fluidBlockArrays = {
+  [0]={label="FBArray-0",
+    nib=8, njb=1, nkb=1,
+    p00=function() return infoFluidBlock(0).p00 end,
+    p10=function() return infoFluidBlock(7).p10 end,
+    p11=function() return infoFluidBlock(7).p11 end,
+    p01=function() return infoFluidBlock(0).p01 end,
+    blockCollection={0, 1, 2, 3, 4, 5, 6, 7, }, -- end blockCollection
+    blockArray={
+      [1]={[1]={[1]=0}, }, -- end [ib]
+      [2]={[1]={[1]=1}, }, -- end [ib]
+      [3]={[1]={[1]=2}, }, -- end [ib]
+      [4]={[1]={[1]=3}, }, -- end [ib]
+      [5]={[1]={[1]=4}, }, -- end [ib]
+      [6]={[1]={[1]=5}, }, -- end [ib]
+      [7]={[1]={[1]=6}, }, -- end [ib]
+      [8]={[1]={[1]=7}, }, -- end [ib]
+    }, -- end blockArray
+  },
+} -- end fluidBlockArrays
+-- Dictionary of FluidBlockArrays
+fluidBlockArraysDict = {
+ ["FBArray-0"]=0,
+} -- end fluidBlockArraysDict
+-- Map from FluidBlock id to FluidBlockArray id
+whichFluidBlockArray = {
+ [0]=0, [1]=0, [2]=0, [3]=0, [4]=0,
+ [5]=0, [6]=0, [7]=0,
+} -- end whichFluidBlockArray
+-- Map from FluidBlock id to FluidBlockArray label
+whichFluidBlockArrayLabel = {
+ [0]="FBArray-0", [1]="FBArray-0", [2]="FBArray-0", [3]="FBArray-0", [4]="FBArray-0",
+ [5]="FBArray-0", [6]="FBArray-0", [7]="FBArray-0",
+} -- end whichFluidBlockArrayLabel
+-- Dictionary of FluidBlocks
+fluidBlocksDict = {
+ ["FBArray-0-blk-1-1"]=0,
+ ["FBArray-0-blk-4-1"]=3,
+ ["FBArray-0-blk-2-1"]=1,
+ ["FBArray-0-blk-5-1"]=4,
+ ["FBArray-0-blk-7-1"]=6,
+ ["FBArray-0-blk-3-1"]=2,
+ ["FBArray-0-blk-6-1"]=5,
+ ["FBArray-0-blk-8-1"]=7,
+} -- end fluidBlocksDict
+function is_in_FluidBlockArray(blkId, label)
+   -- Returns true if a block is in a particular FluidBlockArray.
+   local myfba = whichFluidBlockArrayLabel[blkId]
+   if not myfba then
+      return false
+   end
+   if label == myfba then
+      return true
+   else
+      return false
+   end
+end

@@ -33,13 +33,13 @@ pnts.centr = Vector3:new{x=0.0, y=0.0};
 pnts.a = Vector3:new{x=-1.0*R, y=0.0}; pnts.b = Vector3:new{x=R*math.cos(alpha), y=R*math.sin(alpha)}
 pnts.c = Vector3:new{x=0.9*R, y=2.65*R}; pnts.d = Vector3:new{x=-1.4*R, y=0.0}
 -- Bezier points for inflow boundary
-pnts.s1 = Vector3:new{x=-1.4*R, y=1.1*R}; pnts.s1 = Vector3:new{x=-0.5*R, y=1.8*R}
+pnts.s1 = Vector3:new{x=-1.4*R, y=1.1*R}; pnts.s2 = Vector3:new{x=-0.5*R, y=1.8*R}
 -- Bezier points for outflow boundary
 pnts.m1 = Vector3:new{x=0.9*R, y=1.5*R}; pnts.m2 = Vector3:new{x=1.0*R, y=2.1*R}
 
 --- Define paths for the four boundary edges ---
 -- Sphere surface
-Arc_s = Arc:new{p0=pnts.a, p1=pnts.b, centre=ponts.centr} 
+Arc_s = Arc:new{p0=pnts.a, p1=pnts.b, centre=pnts.centr} 
 -- Outflow boundary, noting we have to reverse direction to match convention of North boundary progressing west to east
 Bez_out =ReversedPath:new{underlying_path=Bezier:new{points={pnts.b,pnts.m1,pnts.m2,pnts.c}}}
 -- Inflow boundary
@@ -147,7 +147,8 @@ setHistoryPoint{x=-1.10*R,y=0.0}
 --- Config options ---
 -- Source terms for Lorentz force
 config.udf_source_terms = true
-config.uf_source_terms_file = 'udf-source-terms.lua'
+--config.udf_source_terms_file = 'udf-source-terms.lua'
+config.udf_source_terms_file = "udf-my-source-terms.lua"
 
 config.flux_calculator = "hanel" -- try using different flux calculator to remove carbuncle effect (?)
 
@@ -160,6 +161,6 @@ config.dt_plot = 2.5e-6
 config.dt_history = config.dt_plot/100.0 -- added this line to hopefully have history plot more frequently (?)
 config.dt_init = 1.0e-9
 
-config.max_invalid_cells = m0*n1/4 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
+config.max_invalid_cells = n0*n1/4 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
 config.adjust_invalid_cell_data = true -- (?)
 config.report_invalid_cells = false -- This will speed up sim

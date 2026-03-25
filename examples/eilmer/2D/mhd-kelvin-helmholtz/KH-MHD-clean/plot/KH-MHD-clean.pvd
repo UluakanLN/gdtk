@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+<Collection>
+<DataSet timestep="0.000000000000000000e+00" group="" part="0" file="KH-MHD-clean-b0000-t0000.vtu"/>
+<DataSet timestep="0.000000000000000000e+00" group="" part="0" file="KH-MHD-clean-b0001-t0000.vtu"/>
+<DataSet timestep="0.000000000000000000e+00" group="" part="0" file="KH-MHD-clean-b0002-t0000.vtu"/>
+<DataSet timestep="0.000000000000000000e+00" group="" part="0" file="KH-MHD-clean-b0003-t0000.vtu"/>
+<DataSet timestep="3.544940512084964661e-05" group="" part="0" file="KH-MHD-clean-b0000-t0001.vtu"/>
+<DataSet timestep="3.544940512084964661e-05" group="" part="0" file="KH-MHD-clean-b0001-t0001.vtu"/>
+<DataSet timestep="3.544940512084964661e-05" group="" part="0" file="KH-MHD-clean-b0002-t0001.vtu"/>
+<DataSet timestep="3.544940512084964661e-05" group="" part="0" file="KH-MHD-clean-b0003-t0001.vtu"/>
+<DataSet timestep="7.030647575113224300e-05" group="" part="0" file="KH-MHD-clean-b0000-t0002.vtu"/>
+<DataSet timestep="7.030647575113224300e-05" group="" part="0" file="KH-MHD-clean-b0001-t0002.vtu"/>
+<DataSet timestep="7.030647575113224300e-05" group="" part="0" file="KH-MHD-clean-b0002-t0002.vtu"/>
+<DataSet timestep="7.030647575113224300e-05" group="" part="0" file="KH-MHD-clean-b0003-t0002.vtu"/>
+<DataSet timestep="9.823774952620093989e-05" group="" part="0" file="KH-MHD-clean-b0000-t0003.vtu"/>
+<DataSet timestep="9.823774952620093989e-05" group="" part="0" file="KH-MHD-clean-b0001-t0003.vtu"/>
+<DataSet timestep="9.823774952620093989e-05" group="" part="0" file="KH-MHD-clean-b0002-t0003.vtu"/>
+<DataSet timestep="9.823774952620093989e-05" group="" part="0" file="KH-MHD-clean-b0003-t0003.vtu"/>
+</Collection>
+</VTKFile>
