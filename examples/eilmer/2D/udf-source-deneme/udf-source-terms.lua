@@ -5,11 +5,11 @@ function sourceTerms(t, cell)
     src.momentum_x = 0.0
     src.momentum_y = 0.0
     src.momentum_z = 0.0
-    src.total_energy = 0.0
+    src.total_energy = 1e8
 
-    if t >= 5.0e-4 then
-        src.momentum_y = 50000.0
-    end
+   -- if t >= 2.0e-5 then
+    --    src.momentum_y = 500.0
+    --end
 
     return src
 end
