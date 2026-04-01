@@ -146,8 +146,8 @@ setHistoryPoint{x=-1.10*R,y=0.0}
 
 --- Config options ---
 -- Source terms for Lorentz force
-config.udf_source_terms = true
-config.udf_source_terms_file = 'udf-source-terms.lua'
+--config.udf_source_terms = true
+--config.udf_source_terms_file = 'udf-source-terms.lua'
 
 config.flux_calculator = "hanel" -- try using different flux calculator to remove carbuncle effect (?)
 

@@ -16,9 +16,9 @@ local sqrt = math.sqrt
 local pi = math.pi
 local log = math.log
 
--- some convenient variables needed for the calculations
+-- some convenient functions needed for the calculations
 local molar_mass_Ar = 39.948e-3 -- kg/mol
-local W_e = 5.485799e-7 --kg/mol -- electron molar mass, actually W_e = mass_e x NA 
+local W_e = 5.485799e-7 kg/mol -- electron molar mass, actually W_e = mass_e x NA 
 local mass_e = 9.10938356e-31 -- mass of one elecron in kg
 local NA = 6.02e23 -- Avogadro's constant 1/mol
 
@@ -29,6 +29,21 @@ magnetisation = -1185.0 --(?)
 magnet_radius = 130*0.0254/2 --(?)
 mu0 = 1.0 --(?)
 n_e_min = 1.0e19  -- where did you find this threshold?
+
+--magnet delay and ramp-up time (?????????)
+local t_magnet_delay = 10.0E-6 --(?)
+local t_magnet_ramp = 20.0E-6 --(?)
+
+local magnet_schedule_t = {0, 10.0E-6, 20.0E-6, 30.0E-6, 40.0E-6, 50.0E-6, 60.0E-6, 70.0E-6, 80.0E-6, 90.0E-6,
+100.0E-6, 110.0E-6, 120.0E-6, 130.0E-6, 140.0E-6, 150.0E-6, 160.0E-6, 170.0E-6, 180.0E-6, 190.0E-6, 200.0E-6,
+210.0E-6, 220.0E-6, 230.0E-6, 240.0E-6, 250.0E-6} ----------------should these not be in terms of t_magnetdelay??
+-- Also changed above to be more appropriate scaling (??????????)
+
+local magnet_schedule_Bscale = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+local size_magnet_schedule = 26 --table.getn(magnet_schedule_t) -------------------------------------But there is only 6
+elements
+local t_current = 0.0
+local t_counter = 0
 
 function magnetic_field(x,y)
     B_vector = {}
@@ -50,20 +65,6 @@ function magnetic_field(x,y)
     return B_vector
 end -- end function magnetic_field 
 
---magnet delay and ramp-up time (?????????)
-local t_magnet_delay = 10.0E-6 --(?)
-local t_magnet_ramp = 20.0E-6 --(?)
-
-local magnet_schedule_t = {0, 10.0E-6, 20.0E-6, 30.0E-6, 40.0E-6, 50.0E-6, 60.0E-6, 70.0E-6, 80.0E-6, 90.0E-6,
-100.0E-6, 110.0E-6, 120.0E-6, 130.0E-6, 140.0E-6, 150.0E-6, 160.0E-6, 170.0E-6, 180.0E-6, 190.0E-6, 200.0E-6,
-210.0E-6, 220.0E-6, 230.0E-6, 240.0E-6, 250.0E-6} ----------------should these not be in terms of t_magnetdelay??
--- Also changed above to be more appropriate scaling (??????????)
-
-local magnet_schedule_Bscale = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
-local size_magnet_schedule = 26 --table.getn(magnet_schedule_t) -------------------------------------But there is only 6 elements
-local t_current = 0.0
-local t_counter = 0
-
 function sourceTerms(t, cell)
     -- computes the Lorentz force source term which appears in the resistive MHD equations
     src = {}
@@ -82,7 +83,7 @@ function sourceTerms(t, cell)
         n_e = NA*cell.massf["e-"]*cell.rho/W_e --electron number density -----------------cant find eq but units make sense
     end
 
-     function conductivity(n_e)
+    function conductivity(n_e)
         sigma = 0.0
         --electrical conductivity from Raiser for a strongly ionized plasma
         if n_e < n_e_min then
@@ -100,7 +101,7 @@ function sourceTerms(t, cell)
         end
         return sigma -- conductivity
     end
-    --------------------------------------------------------didnt use weakly ionised equation (?)
+ --------------------------------------------------------didnt use weakly ionised equation (?)
     function Lorentz_src(Bx,By,ux,uy,sigma)
         F = {}
         F.x = -sigma*By*(ux*By-uy*Bx)
