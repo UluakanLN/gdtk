@@ -1,0 +1,2578 @@
+Eilmer 4.0 compressible-flow simulation code.
+Revision-id: fa55f461
+Revision-date: Thu Apr 2 08:02:25 2026 +1000
+Compiler-name: ldc2
+Build-date: Paz 05 Nis 2026 22:21:40 +03
+Build-flavour: debug
+Profiling: omitted
+Capabilities: multi-species-gas multi-temperature-gas MHD turbulence.
+Parallelism: Shared-memory
+Begin simulation with command-line arguments.
+  jobName: sphere
+  tindxStart: 0
+  maxWallClock: 432000
+  verbosityLevel: 1
+  maxCPUs: 32 for shared memory-parallelism
+Begin init_simulation()...
+Single process running with 5 threads.
+Heap memory used: 282 MB, unused: 94 MB, total: 376 MB (376-376 MB per task)
+Done init_simulation() at wall-clock(WC)= 3.0 sec
+starting simulation time= 0
+Integrate in time.
+Step=     20 t= 1.586e-08 dt= 5.865e-10 cfl=0.20 WC=3.3 WCtFT=69988.6 WCtMS=328396.7
+Step=     40 t= 2.764e-08 dt= 5.895e-10 cfl=0.12 WC=6.7 WCtFT=71380.5 WCtMS=336643.3
+Step=     60 t= 3.934e-08 dt= 5.821e-10 cfl=0.12 WC=9.9 WCtFT=70992.1 WCtMS=330656.7
+Step=     80 t= 5.078e-08 dt= 5.673e-10 cfl=0.12 WC=13.4 WCtFT=73640.7 WCtMS=334286.6
+Step=    100 t= 6.181e-08 dt= 5.468e-10 cfl=0.12 WC=16.4 WCtFT=75097.8 WCtMS=328543.6
+Step=    120 t= 7.251e-08 dt= 5.315e-10 cfl=0.12 WC=19.6 WCtFT=76811.7 WCtMS=326697.1
+Step=    140 t= 8.299e-08 dt= 5.214e-10 cfl=0.12 WC=23.1 WCtFT=78934.1 WCtMS=329334.1
+Step=    160 t= 9.333e-08 dt= 5.162e-10 cfl=0.12 WC=26.2 WCtFT=79379.0 WCtMS=327923.8
+Step=    180 t= 1.035e-07 dt= 5.061e-10 cfl=0.12 WC=29.7 WCtFT=81444.6 WCtMS=329870.3
+Step=    200 t= 1.135e-07 dt= 4.978e-10 cfl=0.12 WC=32.8 WCtFT=82437.9 WCtMS=328447.2
+Step=    220 t= 1.234e-07 dt= 4.933e-10 cfl=0.12 WC=36.1 WCtFT=83202.1 WCtMS=328463.9
+Step=    240 t= 1.332e-07 dt= 4.919e-10 cfl=0.12 WC=39.8 WCtFT=84219.9 WCtMS=331560.2
+Step=    260 t= 1.431e-07 dt= 4.903e-10 cfl=0.12 WC=43.0 WCtFT=84312.1 WCtMS=330841.6
+Step=    280 t= 1.528e-07 dt= 4.876e-10 cfl=0.12 WC=46.3 WCtFT=84729.3 WCtMS=330639.4
+Step=    300 t= 1.626e-07 dt= 4.867e-10 cfl=0.12 WC=49.5 WCtFT=84627.2 WCtMS=329657.2
+Step=    320 t= 1.723e-07 dt= 4.872e-10 cfl=0.12 WC=52.6 WCtFT=84314.1 WCtMS=328791.1
+Step=    340 t= 1.820e-07 dt= 4.876e-10 cfl=0.12 WC=56.1 WCtFT=84580.8 WCtMS=330132.1
+Step=    360 t= 1.918e-07 dt= 4.873e-10 cfl=0.12 WC=59.5 WCtFT=84782.5 WCtMS=330734.9
+Step=    380 t= 2.015e-07 dt= 4.879e-10 cfl=0.12 WC=63.4 WCtFT=85470.6 WCtMS=333783.9
+Step=    400 t= 2.113e-07 dt= 4.889e-10 cfl=0.12 WC=66.8 WCtFT=85292.7 WCtMS=333823.2
+Step=    420 t= 2.211e-07 dt= 4.896e-10 cfl=0.12 WC=70.1 WCtFT=85173.3 WCtMS=333829.9
+Step=    440 t= 2.309e-07 dt= 4.901e-10 cfl=0.12 WC=73.6 WCtFT=85294.9 WCtMS=334658.2
+Step=    460 t= 2.407e-07 dt= 4.908e-10 cfl=0.12 WC=76.9 WCtFT=85056.1 WCtMS=334210.1
+Step=    480 t= 2.506e-07 dt= 4.916e-10 cfl=0.12 WC=81.0 WCtFT=85702.3 WCtMS=337289.9
+Step=    500 t= 2.604e-07 dt= 4.919e-10 cfl=0.12 WC=84.2 WCtFT=85524.5 WCtMS=336839.8
+Step=    520 t= 2.702e-07 dt= 4.922e-10 cfl=0.12 WC=87.6 WCtFT=85430.8 WCtMS=336685.5
+Step=    540 t= 2.801e-07 dt= 4.925e-10 cfl=0.12 WC=91.3 WCtFT=85766.3 WCtMS=338212.4
+Step=    560 t= 2.899e-07 dt= 4.927e-10 cfl=0.12 WC=94.8 WCtFT=85792.5 WCtMS=338433.8
+Step=    580 t= 2.998e-07 dt= 4.927e-10 cfl=0.12 WC=98.6 WCtFT=86179.5 WCtMS=339984.1
+Step=    600 t= 3.096e-07 dt= 4.926e-10 cfl=0.12 WC=102.4 WCtFT=86494.9 WCtMS=341197.6
+Step=    620 t= 3.195e-07 dt= 4.927e-10 cfl=0.12 WC=105.9 WCtFT=86574.8 WCtMS=341555.4
+Step=    640 t= 3.293e-07 dt= 4.927e-10 cfl=0.12 WC=109.9 WCtFT=87057.0 WCtMS=343458.8
+Step=    660 t= 3.392e-07 dt= 4.925e-10 cfl=0.12 WC=113.4 WCtFT=87077.2 WCtMS=343471.5
+Step=    680 t= 3.490e-07 dt= 4.925e-10 cfl=0.12 WC=117.3 WCtFT=87414.1 WCtMS=344771.0
+Step=    700 t= 3.589e-07 dt= 4.925e-10 cfl=0.12 WC=120.8 WCtFT=87486.0 WCtMS=345087.7
+Step=    720 t= 3.687e-07 dt= 4.926e-10 cfl=0.12 WC=124.4 WCtFT=87538.2 WCtMS=345381.2
+Step=    740 t= 3.786e-07 dt= 4.928e-10 cfl=0.12 WC=128.4 WCtFT=87902.3 WCtMS=346931.0
+Step=    760 t= 3.885e-07 dt= 4.928e-10 cfl=0.12 WC=132.0 WCtFT=87984.4 WCtMS=347310.1
+Step=    780 t= 3.983e-07 dt= 4.929e-10 cfl=0.12 WC=135.6 WCtFT=88019.8 WCtMS=347490.1
+Step=    800 t= 4.082e-07 dt= 4.930e-10 cfl=0.12 WC=139.3 WCtFT=88174.4 WCtMS=348173.2
+Step=    820 t= 4.180e-07 dt= 4.931e-10 cfl=0.12 WC=143.1 WCtFT=88309.5 WCtMS=348788.6
+Step=    840 t= 4.279e-07 dt= 4.932e-10 cfl=0.12 WC=147.2 WCtFT=88653.0 WCtMS=350210.0
+Step=    860 t= 4.378e-07 dt= 4.933e-10 cfl=0.12 WC=150.7 WCtFT=88631.5 WCtMS=350247.0
+Step=    880 t= 4.476e-07 dt= 4.934e-10 cfl=0.12 WC=154.5 WCtFT=88780.2 WCtMS=350877.4
+Step=    900 t= 4.575e-07 dt= 4.935e-10 cfl=0.12 WC=158.2 WCtFT=88873.7 WCtMS=351355.2
+Step=    920 t= 4.674e-07 dt= 4.936e-10 cfl=0.12 WC=161.9 WCtFT=88994.4 WCtMS=351883.7
+Step=    940 t= 4.772e-07 dt= 4.935e-10 cfl=0.12 WC=166.0 WCtFT=89275.4 WCtMS=352940.4
+Step=    960 t= 4.871e-07 dt= 4.934e-10 cfl=0.12 WC=169.5 WCtFT=89304.9 WCtMS=353020.1
+Step=    980 t= 4.970e-07 dt= 4.933e-10 cfl=0.12 WC=173.6 WCtFT=89610.5 WCtMS=354199.8
+Step=   1000 t= 5.068e-07 dt= 4.932e-10 cfl=0.12 WC=177.8 WCtFT=89917.6 WCtMS=355330.2
+Step=   1020 t= 5.167e-07 dt= 4.931e-10 cfl=0.12 WC=181.4 WCtFT=89988.9 WCtMS=355577.4
+Step=   1040 t= 5.266e-07 dt= 4.931e-10 cfl=0.12 WC=185.6 WCtFT=90297.4 WCtMS=356735.6
+Step=   1060 t= 5.364e-07 dt= 4.928e-10 cfl=0.12 WC=189.1 WCtFT=90298.0 WCtMS=356603.4
+Step=   1080 t= 5.463e-07 dt= 4.926e-10 cfl=0.12 WC=192.5 WCtFT=90280.0 WCtMS=356372.3
+Step=   1100 t= 5.561e-07 dt= 4.923e-10 cfl=0.12 WC=196.1 WCtFT=90330.7 WCtMS=356385.7
+Step=   1120 t= 5.660e-07 dt= 4.922e-10 cfl=0.12 WC=199.5 WCtFT=90263.6 WCtMS=355993.4
+Step=   1140 t= 5.758e-07 dt= 4.919e-10 cfl=0.12 WC=203.4 WCtFT=90455.2 WCtMS=356605.4
+Step=   1160 t= 5.856e-07 dt= 4.916e-10 cfl=0.12 WC=206.8 WCtFT=90469.5 WCtMS=356415.6
+Step=   1180 t= 5.955e-07 dt= 4.913e-10 cfl=0.12 WC=210.5 WCtFT=90573.6 WCtMS=356609.8
+Step=   1200 t= 6.053e-07 dt= 4.909e-10 cfl=0.12 WC=214.2 WCtFT=90669.4 WCtMS=356747.5
+Step=   1220 t= 6.151e-07 dt= 4.906e-10 cfl=0.12 WC=217.9 WCtFT=90783.9 WCtMS=356964.1
+Step=   1240 t= 6.249e-07 dt= 4.903e-10 cfl=0.12 WC=221.4 WCtFT=90835.4 WCtMS=356946.3
+Step=   1260 t= 6.347e-07 dt= 4.900e-10 cfl=0.12 WC=225.1 WCtFT=90908.0 WCtMS=357006.7
+Step=   1280 t= 6.445e-07 dt= 4.896e-10 cfl=0.12 WC=228.7 WCtFT=91021.2 WCtMS=357169.7
+Step=   1300 t= 6.543e-07 dt= 4.892e-10 cfl=0.12 WC=232.5 WCtFT=91173.7 WCtMS=357498.2
+Step=   1320 t= 6.641e-07 dt= 4.888e-10 cfl=0.12 WC=236.1 WCtFT=91249.1 WCtMS=357506.3
+Step=   1340 t= 6.738e-07 dt= 4.884e-10 cfl=0.12 WC=240.0 WCtFT=91431.9 WCtMS=357952.5
+Step=   1360 t= 6.836e-07 dt= 4.880e-10 cfl=0.12 WC=243.7 WCtFT=91555.6 WCtMS=358157.8
+Step=   1380 t= 6.934e-07 dt= 4.876e-10 cfl=0.12 WC=247.4 WCtFT=91670.3 WCtMS=358316.4
+Step=   1400 t= 7.031e-07 dt= 4.871e-10 cfl=0.12 WC=251.1 WCtFT=91769.6 WCtMS=358400.4
+Step=   1420 t= 7.128e-07 dt= 4.867e-10 cfl=0.12 WC=254.6 WCtFT=91850.9 WCtMS=358372.1
+Step=   1440 t= 7.226e-07 dt= 4.862e-10 cfl=0.12 WC=258.6 WCtFT=92070.7 WCtMS=358902.5
+Step=   1460 t= 7.323e-07 dt= 4.857e-10 cfl=0.12 WC=262.4 WCtFT=92238.1 WCtMS=359219.8
+Step=   1480 t= 7.420e-07 dt= 4.853e-10 cfl=0.12 WC=266.2 WCtFT=92392.1 WCtMS=359490.5
+Step=   1500 t= 7.517e-07 dt= 4.848e-10 cfl=0.12 WC=269.9 WCtFT=92516.7 WCtMS=359616.8
+Step=   1520 t= 7.614e-07 dt= 4.841e-10 cfl=0.12 WC=273.5 WCtFT=92644.5 WCtMS=359635.7
+Step=   1540 t= 7.710e-07 dt= 4.833e-10 cfl=0.12 WC=277.5 WCtFT=92926.4 WCtMS=360154.9
+Step=   1560 t= 7.807e-07 dt= 4.825e-10 cfl=0.12 WC=281.6 WCtFT=93215.8 WCtMS=360690.2
+Step=   1580 t= 7.903e-07 dt= 4.816e-10 cfl=0.12 WC=285.6 WCtFT=93517.1 WCtMS=361184.1
+Step=   1600 t= 8.000e-07 dt= 4.806e-10 cfl=0.12 WC=289.4 WCtFT=93779.4 WCtMS=361431.9
+Step=   1620 t= 8.095e-07 dt= 4.796e-10 cfl=0.12 WC=293.4 WCtFT=94118.5 WCtMS=361989.3
+Step=   1640 t= 8.191e-07 dt= 4.786e-10 cfl=0.12 WC=297.6 WCtFT=94487.9 WCtMS=362687.7
+Step=   1660 t= 8.287e-07 dt= 4.777e-10 cfl=0.12 WC=301.9 WCtFT=94862.6 WCtMS=363396.9
+Step=   1680 t= 8.382e-07 dt= 4.767e-10 cfl=0.12 WC=306.0 WCtFT=95195.2 WCtMS=363963.1
+Step=   1700 t= 8.477e-07 dt= 4.757e-10 cfl=0.12 WC=309.9 WCtFT=95490.3 WCtMS=364337.1
+Step=   1720 t= 8.572e-07 dt= 4.747e-10 cfl=0.12 WC=314.2 WCtFT=95872.1 WCtMS=365021.9
+Step=   1740 t= 8.667e-07 dt= 4.737e-10 cfl=0.12 WC=318.1 WCtFT=96152.7 WCtMS=365360.0
+Step=   1760 t= 8.762e-07 dt= 4.728e-10 cfl=0.12 WC=322.6 WCtFT=96593.2 WCtMS=366293.3
+Step=   1780 t= 8.856e-07 dt= 4.719e-10 cfl=0.12 WC=326.6 WCtFT=96868.3 WCtMS=366640.8
+Step=   1800 t= 8.950e-07 dt= 4.710e-10 cfl=0.12 WC=330.8 WCtFT=97185.3 WCtMS=367178.1
+Step=   1820 t= 9.045e-07 dt= 4.700e-10 cfl=0.12 WC=334.8 WCtFT=97475.3 WCtMS=367535.6
+Step=   1840 t= 9.138e-07 dt= 4.691e-10 cfl=0.12 WC=339.0 WCtFT=97823.7 WCtMS=368157.7
+Step=   1860 t= 9.232e-07 dt= 4.683e-10 cfl=0.12 WC=343.2 WCtFT=98139.5 WCtMS=368661.1
+Step=   1880 t= 9.326e-07 dt= 4.674e-10 cfl=0.12 WC=347.2 WCtFT=98408.4 WCtMS=369034.7
+Step=   1900 t= 9.419e-07 dt= 4.666e-10 cfl=0.12 WC=351.4 WCtFT=98728.7 WCtMS=369568.6
+Step=   1920 t= 9.512e-07 dt= 4.657e-10 cfl=0.12 WC=355.8 WCtFT=99111.5 WCtMS=370296.3
+Step=   1940 t= 9.605e-07 dt= 4.648e-10 cfl=0.12 WC=359.6 WCtFT=99319.4 WCtMS=370388.8
+Step=   1960 t= 9.698e-07 dt= 4.640e-10 cfl=0.12 WC=363.7 WCtFT=99605.0 WCtMS=370792.4
+Step=   1980 t= 9.791e-07 dt= 4.631e-10 cfl=0.12 WC=368.2 WCtFT=99996.1 WCtMS=371582.3
+Step=   2000 t= 9.883e-07 dt= 4.624e-10 cfl=0.12 WC=372.6 WCtFT=100347.4 WCtMS=372266.4
+Step=   2020 t= 9.976e-07 dt= 4.615e-10 cfl=0.12 WC=377.0 WCtFT=100703.5 WCtMS=372905.2
+Step=   2040 t= 1.007e-06 dt= 4.606e-10 cfl=0.12 WC=381.2 WCtFT=101007.0 WCtMS=373351.1
+Step=   2060 t= 1.016e-06 dt= 4.598e-10 cfl=0.12 WC=385.4 WCtFT=101300.8 WCtMS=373786.4
+Step=   2080 t= 1.025e-06 dt= 4.590e-10 cfl=0.12 WC=389.6 WCtFT=101593.6 WCtMS=374231.5
+Step=   2100 t= 1.034e-06 dt= 4.582e-10 cfl=0.12 WC=394.0 WCtFT=101929.2 WCtMS=374812.7
+Step=   2120 t= 1.043e-06 dt= 4.574e-10 cfl=0.12 WC=398.1 WCtFT=102222.1 WCtMS=375207.5
+Step=   2140 t= 1.053e-06 dt= 4.566e-10 cfl=0.12 WC=402.8 WCtFT=102629.9 WCtMS=376040.2
+Step=   2160 t= 1.062e-06 dt= 4.558e-10 cfl=0.12 WC=407.3 WCtFT=102998.8 WCtMS=376737.1
+Step=   2180 t= 1.071e-06 dt= 4.550e-10 cfl=0.12 WC=411.8 WCtFT=103343.0 WCtMS=377364.4
+Step=   2200 t= 1.080e-06 dt= 4.542e-10 cfl=0.12 WC=416.2 WCtFT=103672.7 WCtMS=377908.4
+Step=   2220 t= 1.089e-06 dt= 4.534e-10 cfl=0.12 WC=420.4 WCtFT=103973.9 WCtMS=378330.0
+Step=   2240 t= 1.098e-06 dt= 4.525e-10 cfl=0.12 WC=424.7 WCtFT=104278.3 WCtMS=378767.3
+Step=   2260 t= 1.107e-06 dt= 4.518e-10 cfl=0.12 WC=429.4 WCtFT=104688.7 WCtMS=379608.6
+Step=   2280 t= 1.116e-06 dt= 4.510e-10 cfl=0.12 WC=433.7 WCtFT=104967.4 WCtMS=379990.0
+Step=   2300 t= 1.125e-06 dt= 4.502e-10 cfl=0.12 WC=438.3 WCtFT=105346.1 WCtMS=380684.3
+Step=   2320 t= 1.134e-06 dt= 4.494e-10 cfl=0.12 WC=442.9 WCtFT=105719.1 WCtMS=381350.2
+Temperature above maximum 52284.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 50108.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 50108.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54761.4
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 51630.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 51630.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Step=   2340 t= 1.143e-06 dt= 4.486e-10 cfl=0.12 WC=447.1 WCtFT=106009.2 WCtMS=381730.6
+Temperature above maximum 53669.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 51090.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 51090.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 50748.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 50748.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 53721.1
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 52724.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 52724.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 52243.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 52243.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 53860.1
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 53792.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 53792.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 51104.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 51104.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 50489
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 50489
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 53911.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 53842.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 53842.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 52778.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 52778.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 51990.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 51990.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54042.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 53977.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 53977.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 53964.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 53964.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 50724.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 50724.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54090.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54027.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54027.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54017.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54017.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 50867.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 50867.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54211.4
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54153.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54153.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54150.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54150.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 51840.7
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 51840.7
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 51978.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 51978.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54256.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54199.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54199.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54196.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54196.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 53479.2
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 53479.2
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 53418.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 53418.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54366.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54316
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54316
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54315.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54315.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54328.2
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54328.2
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 51083.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 51083.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54408.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54358.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54358.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54360.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54360.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54376.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54376.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 51225.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 51225.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54509.1
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54465.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54465.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54472.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54472.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54495.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54495.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 52184.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 52184.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 52467.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 52467.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54547.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54505.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54505.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54513.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54513.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54536.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54536.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 53826.4
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 53826.4
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 53879.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 53879.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54639.5
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54602.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54602.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54615.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54615.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54642.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54642.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54611.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54611.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 50956.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 50956.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54675.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54639.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54639.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54654.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54654.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54682.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54682.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54657.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54657.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 51099.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 51099.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54758.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54727.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54727.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54747.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54747.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54781.2
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54781.2
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54765.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54765.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 52070.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 52070.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 51806.7
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 51806.7
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54791.5
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54761.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54761.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54782.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54782.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54819.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54819.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54804.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54804.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 53759.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 53759.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 53221.1
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 53221.1
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54867
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54842.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54842.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54867
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54867
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54908.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54908.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54900.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54900.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54789
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54789
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 50292.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 50292.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54897.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54873.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54873.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54899.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54899.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54943.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54943.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 54939
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54939
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54832.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54832.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 50438.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 50438.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54965.4
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54946.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54946.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54976.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 54976.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55024.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55024.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55028.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55028.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54936
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54936
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 51445.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 51445.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54993.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 54975.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 54975.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55006.4
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55006.4
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55056.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55056.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55063.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55063.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 54976.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54976.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 51585.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 51585.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 50010.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 50010.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55044.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55030.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55030.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55065.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55065.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55119.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55119.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55134.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55134.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55055.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55055.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54853.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54853.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55070.1
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55057.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55057.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55092.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55092.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55149.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55149.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55166.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55166.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55094.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55094.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 53844.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 53844.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55125.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55116.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55116.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55154.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55154.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55214.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55214.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55239.4
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55239.4
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55180.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55180.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 54287.3
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54287.3
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54407.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54407.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55148.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55140.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55140.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55180.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55180.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55241.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55241.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55269.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55269.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55212.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55212.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55291.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55291.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54948.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54948.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55197.9
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55193.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55193.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55235.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55235.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55301
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55301
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55334.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55334.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55286.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55286.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55152.3
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55152.3
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 51414.7
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 51414.7
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55219.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55216
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55216
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55259
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55259
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55325.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55325.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55362.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55362.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55317.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55317.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55188.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55188.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 51553.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 51553.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55263.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55263.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55263.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55308.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55308.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55378.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55378.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55421
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55421
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55386.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55386.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55270.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55270.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 52496.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 52496.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 52430.6
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 52430.6
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55282.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55284
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55284
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55330.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55330.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55401.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55401.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55446.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55446.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55415.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55415.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55300.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55300.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54186.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54186.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 53776.6
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 53776.6
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55322
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55326.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55326.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55374.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55374.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55448.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55448.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55498.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55498.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55476.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55476.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55372
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55372
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55121.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55121.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55339.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55345.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55345.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55394
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55394
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55469.7
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55469.7
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55521.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55521.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55503.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55503.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55404.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55404.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54116.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54116.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55374.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55383.5
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55383.5
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55433.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55433.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55511.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55511.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55568.6
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55568.6
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55558.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55558.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55472.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55472.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 54683.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54683.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55104.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55104.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55390.9
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55400.5
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55400.5
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55451.4
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55451.4
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55530.7
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55530.7
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55589.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55589.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55582.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55582.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55497.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55497.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55668.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55668.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55646.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55646.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55421.9
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55434.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55434.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55486.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55486.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55568.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55568.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55631.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55631.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55631.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55631.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55554.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55554.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55373.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55373.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 51983.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 51983.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 50890.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 50890.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55436.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55450.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55450.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55503
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55503
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55585.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55585.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55650.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55650.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55653.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55653.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55580.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55580.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55402
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55402
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 53754.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 53754.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 52247.6
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 52247.6
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55464.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55480.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55480.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55534.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55534.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55618.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55618.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55687.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55687.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55697.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55697.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55633.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55633.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55467.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55467.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55140.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55140.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55477.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55494.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55494.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55549.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55549.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55634.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55634.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55704.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55704.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55717
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55717
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55656.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55656.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55496.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55496.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54083.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 54083.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55502.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55521.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55521.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55577.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55577.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55664.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55664.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55737.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55737.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55755.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55755.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55703.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55703.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55558.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55558.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 54305.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 54305.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 53960.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 53960.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55514.5
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55534.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55534.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55590.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55590.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55678.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55678.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55753
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55753
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55773.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55773.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55725
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55725
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55582
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55582
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55342.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55342.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 54498.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54498.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55536.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55558.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55558.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55615.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55615.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55704.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55704.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55782
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55782
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55808.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55808.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55767.3
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55767.3
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55634.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55634.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55386.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55386.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 50961.3
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 50961.3
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55547.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55570.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55570.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55627.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55627.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55717.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55717.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55796
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55796
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55824.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55824.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55786.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55786.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55657.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55657.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55416.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55416.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 51100.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 51100.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Step=   2360 t= 1.152e-06 dt= 4.478e-10 cfl=0.12 WC=451.7 WCtFT=106360.8 WCtMS=382315.3
+Temperature above maximum 55556.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55581.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55581.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55639.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55639.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55730.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55730.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55811.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55811.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55845.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55845.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55814
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55814
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55696
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55696
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55472.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55472.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 52060.9
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 52060.9
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 50980
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 50980
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55566.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55592.5
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55592.5
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55650.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55650.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55742.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55742.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55824
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55824
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55860.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55860.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55831.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55831.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55717.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55717.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55497.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55497.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 53838.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 53838.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 52303.2
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 52303.2
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55583.5
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55611.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55611.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55670
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55670
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55762.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55762.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55846.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55846.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55886.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55886.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55864.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55864.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55760.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55760.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55554.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55554.3
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55212
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55212
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55592.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55621
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55621
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55680
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55680
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55773.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55773.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55857.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55857.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55900.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55900.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55880.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55880.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55779.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55779.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55580.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55580.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 54126.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54126.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55607.4
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55637.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55637.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55697
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55697
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55790.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55790.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55877.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55877.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55924
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55924
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55909.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55909.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55818.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55818.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55634.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55634.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 54209.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54209.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 53580.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 53580.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55615.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55646.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55646.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55706.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55706.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55800.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55800.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55887.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55887.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55936.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55936.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55924.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55924.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55835.9
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55835.9
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55655.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55655.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55268.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55268.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54114.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54114.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55628.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55661
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55661
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55721
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55721
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55815.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55815.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55904.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55904.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55957
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55957
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55950
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55950
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55870.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55870.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55700.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55700.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55435.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55435.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 50608.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 50608.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55636.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55668.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55668.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55729.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55729.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55824.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55824.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55914.4
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55914.4
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55968.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55968.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55963.1
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55963.1
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55886.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55886.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55721.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55721.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55462.6
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55462.6
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 50748.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 50748.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55647.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55681.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55681.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55742.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55742.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55838.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55838.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55929.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55929.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55986.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55986.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55985.7
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55985.7
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55916.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55916.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55763.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55763.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55522.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55522.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 51730.7
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 51730.7
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55654.1
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55689
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55689
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55749.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55749.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55846
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55846
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55937.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55937.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55996.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55996.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 55997.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55997.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55930.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55930.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55782.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55782.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55547.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55547.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 51865.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 51865.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 50111.8
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 50111.8
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55663.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55700.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55700.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55761.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55761.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55857.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55857.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55950.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55950.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56012.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56012.1
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56017.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56017.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55957.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55957.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55819.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55819.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55596.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55596.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55239.2
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55239.2
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55669.9
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55706.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55706.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55767.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55767.9
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55864.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55864.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55958.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55958.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56021.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56021.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56028.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56028.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55970.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55970.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55836.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55836.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55620.5
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55620.5
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54108.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54108.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55678.1
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55716.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55716.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55777.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55777.7
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55874.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55874.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55969.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55969.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56034.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56034.8
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56045.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56045.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 55993.9
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55993.9
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55869.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55869.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55669.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55669.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 53900.7
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 53900.7
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 52660.5
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 52660.5
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55683.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55722.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55722.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55784
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55784
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55881.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55881.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55977
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55977
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56043
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56043
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56055.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56055.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56005.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56005.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55885.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55885.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55688.3
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55688.3
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55002.9
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55002.9
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 53189.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 53189.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55690.9
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55730.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55730.8
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55792.4
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55792.4
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55889.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55889.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55986.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55986.5
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56054.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56054.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56070.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56070.2
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56026.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56026.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55914.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55914.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55729.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55729.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55449.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55449.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55696
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55736.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55736.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55798
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55798
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55895.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55895.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55992.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 55992.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56061.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56061.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56078.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56078.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56037.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56037.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55928.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55928.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55750.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55750.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54409.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54409.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55702.2
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55743.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55743.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55805.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55805.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55903
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55903
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56001
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56001
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56071.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56071.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56091.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56091.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56055
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56055
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55954.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55954.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55789.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55789.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 54933.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54933.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55309.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55309.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55706.9
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55748.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55748.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55810.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55810.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55908.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55908.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56006.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56006.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56077.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56077.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56099.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56099.8
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56064.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56064.8
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55967.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55967.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55804.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55804.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55928.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55928.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55845.1
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55845.1
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55712.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55755.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55755.1
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55816.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55816.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55914.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55914.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56013.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56013.7
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56086
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56086
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56110.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56110.9
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56080.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56080.4
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 55989.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55989.9
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55836.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55836.2
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55618.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55618.6
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 52066.9
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 52066.9
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 50813
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 50813
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55716.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55759.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55759.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55820.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55820.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55919.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55919.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56018.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56018.9
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56091.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56091.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56118.1
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56118.1
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56089.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56089.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56001.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56001.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55851.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55851.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55637.4
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55637.4
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 53872
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 53872
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 52085
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 52085
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55711.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55755.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55755.6
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55816.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55816.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55915
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55915
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56015.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56015.3
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56089.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56089.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56118
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56118
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56093.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56093.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56011.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56011.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55871.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55871.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55669.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55669.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55295.1
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55295.1
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55715.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55759.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55759.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55820.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55820.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55919.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55919.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56020.1
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56020.1
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56094.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56094.7
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56124.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56124.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56101
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56101
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56022.1
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56022.1
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55885.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55885.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55689.4
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55689.4
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54157.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 54157.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55719.3
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55764
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55764
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55824.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55824.3
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55923.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55923.6
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56025
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56025
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56100.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56100.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56132.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56132.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56112.7
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56112.7
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56039.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56039.5
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55911.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55911.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55729.2
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55729.2
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 53913.4
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 53913.4
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 52600.6
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 52600.6
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55722.8
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55767.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55767.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55827.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55827.8
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55927.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55927.5
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56029.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56029.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56105.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56105.5
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56138.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56138.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56119.9
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56119.9
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56049
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56049
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55924.6
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55924.6
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55745.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55745.1
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55018.1
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55018.1
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 53124
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 53124
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55725.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55771.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55771.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55831.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55831.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55930.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55930.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56033.1
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56033.1
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56110.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56110.3
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56145.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56145.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56130
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56130
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56064.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56064.2
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55947.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55947.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55778.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55778.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55486.9
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55486.9
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55728.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55774.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55774.4
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55834.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55834.2
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55934.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55934.3
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56037
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56037
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56114.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56114.6
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56150.7
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56150.7
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56136.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56136.6
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56072.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56072.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55959.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55959.1
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55796
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55796
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54439.9
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 54439.9
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55730.7
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55777
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55777
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55836.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55836.6
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55936.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55936.8
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56039.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56039.8
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56118.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56118.4
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56156.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56156.4
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56145.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56145.2
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56085.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56085.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55979.3
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55979.3
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55828.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55828.3
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 54933.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 54933.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55245.1
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55245.1
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55733.4
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55779.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55779.9
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55839.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55839.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55939.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55939.9
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56043.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56043.2
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56122.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56122.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56161
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56161
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56151.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56151.1
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56093.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56093.4
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 55989.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55989.7
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55840.5
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55840.5
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55931.5
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55931.5
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55777.1
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55777.1
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 55734.6
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55781.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55781.7
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55841.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55841.1
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55941.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55941.4
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56045
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56045
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56124.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56124.9
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56165.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56165.5
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56158.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56158.3
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56104.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56104.8
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56007.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 56007.4
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55865.5
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55865.5
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55639.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55639.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 51978.5
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 51978.5
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 50510.2
+   at position Vector3(-0.0188572, 0.0028141, 0)
+Temperature above maximum 50510.2
+   at position Vector3(-0.0188572, 0.0028141, 0)
+Temperature above maximum 55737
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55784.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55784.2
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55843.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55843.5
+   at position Vector3(-0.0190599, 0.000522878, 0)
+Temperature above maximum 55944.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 55944.1
+   at position Vector3(-0.0190528, 0.000731995, 0)
+Temperature above maximum 56048
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56048
+   at position Vector3(-0.0190435, 0.000941021, 0)
+Temperature above maximum 56128.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56128.2
+   at position Vector3(-0.019032, 0.00114993, 0)
+Temperature above maximum 56169.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56169.6
+   at position Vector3(-0.0190181, 0.00135871, 0)
+Temperature above maximum 56163.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56163.5
+   at position Vector3(-0.0190019, 0.00156731, 0)
+Temperature above maximum 56111.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56111.7
+   at position Vector3(-0.0189835, 0.00177573, 0)
+Temperature above maximum 56016.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 56016.8
+   at position Vector3(-0.0189628, 0.00198393, 0)
+Temperature above maximum 55878.4
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55878.4
+   at position Vector3(-0.0189398, 0.00219189, 0)
+Temperature above maximum 55656.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 55656.2
+   at position Vector3(-0.0189145, 0.00239959, 0)
+Temperature above maximum 53804
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 53804
+   at position Vector3(-0.018887, 0.002607, 0)
+Temperature above maximum 51762.1
+   at position Vector3(-0.0188572, 0.0028141, 0)
+Temperature above maximum 51762.1
+   at position Vector3(-0.0188572, 0.0028141, 0)
+Temperature above maximum 55737.4
+   at position Vector3(-0.019067, 0.000104475, 0)
+Temperature above maximum 55785.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature above maximum 55785.3
+   at position Vector3(-0.0190646, 0.000313696, 0)
+Temperature ab

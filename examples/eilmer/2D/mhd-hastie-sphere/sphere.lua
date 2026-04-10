@@ -156,10 +156,19 @@ config.cfl_value = 0.12 -- to get better chemistry-gas-dynamics coupling
 
 config.max_time = 250.0e-6
 config.max_step = 2000000
-config.dt_plot = 2.5e-6
+--config.dt_plot = 2.5e-6
+config.dt_plot = 2.5e-7
 config.dt_history = config.dt_plot/100.0 -- added this line to hopefully have history plot more frequently (?)
 config.dt_init = 1.0e-9
 
+-- AT the beginning, the temperature in some of the cells of the grid exceeds 50,000 K. 
+-- This is not desirable since the finite rate chemistry is valid for temperatures up to 50,000 K.
+-- Report invalid cells, adjust them, but continue to run the simulation. 
 config.max_invalid_cells = n0*n1/4 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
 config.adjust_invalid_cell_data = true -- (?)
 config.report_invalid_cells = false -- This will speed up sim
+
+-- Take snapshots every 1000 step and store the last two of them
+-- So no need to start the simulation from the very beginning all the time
+ config.snapshot_count = 1000
+ config.number_total_snapshots = 2

@@ -57,6 +57,10 @@ local t_magnet_ramp = 20.0E-6 --(?)
 local magnet_schedule_t = {0, 10.0E-6, 20.0E-6, 30.0E-6, 40.0E-6, 50.0E-6, 60.0E-6, 70.0E-6, 80.0E-6, 90.0E-6,
 100.0E-6, 110.0E-6, 120.0E-6, 130.0E-6, 140.0E-6, 150.0E-6, 160.0E-6, 170.0E-6, 180.0E-6, 190.0E-6, 200.0E-6,
 210.0E-6, 220.0E-6, 230.0E-6, 240.0E-6, 250.0E-6} ----------------should these not be in terms of t_magnetdelay??
+
+--local magnet_schedule_t = {0, 10.0E-6, 20.0E-6, 30.0E-6, 40.0E-6, 50.0E-6, 60.0E-6, 70.0E-6, 80.0E-6, 90.0E-6,
+--100.0E-6, 110.0E-6, 120.0E-6, 130.0E-6, 140.0E-6, 150.0E-6, 160.0E-6, 170.0E-6, 180.0E-6, 190.0E-6, 200.0E-6,
+--210.0E-6, 220.0E-6, 230.0E-6, 240.0E-6, 250.0E-6} ----------------should these not be in terms of t_magnetdelay??
 -- Also changed above to be more appropriate scaling (??????????)
 
 local magnet_schedule_Bscale = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
