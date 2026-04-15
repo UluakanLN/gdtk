@@ -1,0 +1,21 @@
+Eilmer 4.0 compressible-flow simulation code.
+Revision-id: 3ea2f7a2
+Revision-date: Fri Jan 30 10:45:30 2026 +1000
+Compiler-name: ldc2
+Build-date: Tue Feb 10 16:01:43 +03 2026
+Build-flavour: fast
+Profiling: omitted
+Capabilities: multi-species-gas multi-temperature-gas MHD turbulence.
+Parallelism: Shared-memory
+Begin preparation stage for a simulation.
+Loading prep.lua...
+Done loading prep.lua
+nmodes =	1
+nsp =	3
+Fluid History point [1] ib=0 i=350 x=-0.0192504 y=6.40097e-05 z=0
+Fluid History point [2] ib=0 i=314 x=-0.0200108 y=6.90557e-05 z=0
+Fluid History point [3] ib=0 i=269 x=-0.0209618 y=7.46529e-05 z=0
+Build config files for job:	sphere
+Done building config files.
+Done building grid and flow files.
+Done.
