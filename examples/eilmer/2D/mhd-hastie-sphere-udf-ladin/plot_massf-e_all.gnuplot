@@ -1,12 +1,12 @@
 set term postscript eps enhanced color 20
 set output "sphere_massf-e_all.eps"
-set key top right
+set key top left
 
 set xlabel "time, {/Symbol m}s"
 set ylabel "massf-e"
 
 set xtic 10.0
-set ytic 0.0000005
+set ytic 0.00000005
 
 plot \
 "sphere_massf-e_269.dat" using 1:2 with linespoints pt 7 ps 0.5 lw 2 lc rgb "blue" title "ID 269", \
