@@ -106,7 +106,7 @@ NewtonKrylovPhase:new{
   use_auto_cfl = true,
   threshold_relative_residual_for_cfl_growth = 0.99,
   start_cfl = 0.5,
-  max_cfl = 1.0e4,
+  max_cfl = 40.0,
   auto_cfl_exponent = 0.8,
   use_local_timestep = false
 }
@@ -118,7 +118,7 @@ NewtonKrylovPhase:new{
   linear_solve_tolerance = 1e-2,
   fgmres_preconditioning_solve_tolerance = 1e-2,
   grid_motion_enabled = true,
-  auto_cfl_exponent = 0.5
+  auto_cfl_exponent = 0.8
 }
 
 -- switch to second order numerics once the shock has been fit

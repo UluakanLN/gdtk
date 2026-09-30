@@ -10,6 +10,7 @@
 module lmr.dualtimestepping;
 
 import core.memory : GC;
+import core.time : MonoTime;
 import core.stdc.stdlib : exit;
 import std.algorithm : min;
 import std.algorithm.searching : countUntil;
@@ -220,6 +221,8 @@ void initDualTimeNewtonKrylovSimulation(int snapshotStart, int maxCPUs, int thre
     if ((cfg.interpolation_order > 1) &&
         ((cfg.unstructured_limiter == UnstructuredLimiter.hvenkat) ||
          (cfg.unstructured_limiter == UnstructuredLimiter.venkat) ||
+         (cfg.unstructured_limiter == UnstructuredLimiter.hvenkat2) ||
+         (cfg.unstructured_limiter == UnstructuredLimiter.venkat2) ||
          (cfg.unstructured_limiter == UnstructuredLimiter.hvenkat_mlp) ||
          (cfg.unstructured_limiter == UnstructuredLimiter.venkat_mlp))) {
         initUSGlimiters();
@@ -370,6 +373,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
     int stepsIntoCurrentPhase = 0;
     bool updatePreconditionerThisStep = false;
     CFLSelector cflSelector;
+    CFLSelector[] phaseCFLSelectors;
     int numberBadSteps = 0;
     bool startOfNewPhase = false;
     double omega = 1.0;
@@ -420,20 +424,18 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
         }
     }
 
-    // Look for global CFL schedule and use to set CFL
-    if (nkCfg.cflSchedule.length > 0) {
-        foreach (i, startRamp; nkCfg.cflSchedule[0 .. $-1]) {
-            if (startStep >= startRamp.step) {
-                auto endRamp = nkCfg.cflSchedule[i+1];
-                cflSelector = new LinearRampCFL(startRamp.step, endRamp.step, startRamp.cfl, endRamp.cfl);
-                break;
-            }
+    // Build phase-specific CFL selectors.
+    phaseCFLSelectors.length = nkCfg.numberOfPhases;
+    foreach (i, phase; nkPhases) {
+        if (phase.useAutoCFL) {
+            phaseCFLSelectors[i] = new ResidualBasedAutoCFL(phase.autoCFLExponent, phase.maxCFL,
+                                                            phase.thresholdRelativeResidualForCFLGrowth,
+                                                            phase.limitOnCFLIncreaseRatio, phase.limitOnCFLDecreaseRatio);
         }
-        // Or check we aren't at end of cfl schedule
-        auto lastEntry = nkCfg.cflSchedule[$-1];
-        if (startStep >= lastEntry.step) {
-            // Set a flat CFL beyond limit of scheule.
-            cflSelector = new LinearRampCFL(lastEntry.step, nkCfg.maxNewtonSteps, lastEntry.cfl, lastEntry.cfl);
+        else {
+            auto startRamp = phase.cflSchedule[0];
+            auto endRamp = phase.cflSchedule[1];
+            phaseCFLSelectors[i] = new LinearRampCFL(startRamp.step, endRamp.step, startRamp.cfl, endRamp.cfl);
         }
     }
 
@@ -464,14 +466,12 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
     }
     // On fresh start, the phase setting must be at 0
     setPhaseSettings(0);
+    cflSelector = phaseCFLSelectors[0];
     if (activePhase.useAutoCFL) {
-        cflSelector = new ResidualBasedAutoCFL(activePhase.autoCFLExponent, activePhase.maxCFL,
-                                               activePhase.thresholdRelativeResidualForCFLGrowth,
-                                               activePhase.limitOnCFLIncreaseRatio, activePhase.limitOnCFLDecreaseRatio);
         cfl = activePhase.startCFL;
     }
-    else { // Assume we have a global (phase-independent) schedule
-        cfl = cflSelector.nextCFL(-1.0, startStep, -1.0, -1.0, -1.0);
+    else { // Use the phase CFL schedule
+        cfl = cflSelector.nextCFL(-1.0, stepsIntoCurrentPhase, -1.0, -1.0, -1.0);
     }
 
     //----------------------------------------------
@@ -498,8 +498,6 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
     double wall_clock_elapsed;
     SimState.wall_clock_start = Clock.currTime();
     SimState.target_time = cfg.max_time;
-    double physicalityCheckWallTime;
-    double lineSearchWallTime;
 
     // Normally, we can terminate upon either reaching a maximum time or upon reaching a maximum iteration count.
     shared bool finished_time_stepping = (SimState.time >= SimState.target_time) || (SimState.step >= cfg.max_step);
@@ -514,6 +512,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
         finalStep = false;
         currentPhase = 0;
         setPhaseSettings(0);
+        cflSelector = phaseCFLSelectors[0];
         cfl = activePhase.startCFL;
         stepsIntoCurrentPhase = 0;
         updatePreconditionerThisStep = true;
@@ -522,11 +521,11 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
 
         // evaluate a reference residual for the nonlinear solve
         evalResidualWorker(0);
-        setResiduals();
-        addUnsteadyTermToResiduals();
+        fillResidualVector();
+        addUnsteadyTermToResidualVector();
         computeGlobalResidual();
         referenceGlobalResidual = globalResidual;
-        computeResiduals(referenceResiduals);
+        computeMaxResiduals(referenceResiduals);
         // Add value of 1.0 to each residaul.
         // If values are very large, 1.0 makes no difference.
         // If values are zero, the 1.0 should mean the reference residual
@@ -540,6 +539,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
 
         // solve nonlinear system using Newton-Krylov solver with pseudo time stepping
         foreach (step; 1 .. nkCfg.maxNewtonSteps+1) {
+            routineWallTimeTicks[] = 0;
             cumulativeNewtonSteps += 1;
             //----
             // 0. Check for any special actions based on step to perform at START of step
@@ -556,6 +556,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
                 currentPhase++;
                 stepsIntoCurrentPhase = 0;
                 setPhaseSettings(currentPhase);
+                cflSelector = phaseCFLSelectors[currentPhase];
                 if (currentPhase == nkCfg.numberOfPhases-1) terminalPhase = true;
                 if (activePhase.useAutoCFL) {
                     // If the user gives us a positive startCFL, use that.
@@ -579,7 +580,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
                         }
                     }
                     else {
-                        cfl = cflSelector.nextCFL(-1.0, step, -1.0, -1.0, -1.0);
+                        cfl = cflSelector.nextCFL(-1.0, stepsIntoCurrentPhase, -1.0, -1.0, -1.0);
                     }
                 }
                 else {
@@ -621,16 +622,18 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
             }
 
             // 1a. perform a physicality check if required
-            auto physicalityCheckWallTimeStart = Clock.currTime();
+            auto physicalityCheckWallTimeStart = MonoTime.currTime().ticks;
             omega = nkCfg.usePhysicalityCheck ? determineRelaxationFactor() : 1.0;
-            physicalityCheckWallTime = to!double((Clock.currTime() - physicalityCheckWallTimeStart).total!"msecs"())/1000.0;
+            routineWallTimeTicks[WallTimeIndex.physicalityCheck] =
+                elapsedTicks(physicalityCheckWallTimeStart);
 
             // 1b. do a line search if required
-            auto lineSearchWallTimeStart = Clock.currTime();
+            auto lineSearchWallTimeStart = MonoTime.currTime().ticks;
             if ( (omega > nkCfg.minRelaxationFactorForUpdate) && nkCfg.useLineSearch ) {
                 omega = applyLineSearch(omega, currentPhase, stepsIntoCurrentPhase);
             }
-            lineSearchWallTime = to!double((Clock.currTime() - lineSearchWallTimeStart).total!"msecs"())/1000.0;
+            routineWallTimeTicks[WallTimeIndex.lineSearch] =
+                elapsedTicks(lineSearchWallTimeStart);
 
             // 1c. check if we achived the allowable linear solver tolerance
             bool failedToAchieveAllowableLinearSolverTolerance =
@@ -642,6 +645,11 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
                 // We think??? If not, we bail at this point.
                 try {
                     applyNewtonUpdate(omega);
+
+                    // Update the residual state as soon as the Newton update is accepted;
+                    // the stopping checks use the updated global residual value.
+                    assembleResidualVector(0, currentPhase, stepsIntoCurrentPhase);
+                    computeGlobalResidual();
                 }
                 catch (NewtonKrylovException e) {
                     // We need to bail out at this point.
@@ -690,7 +698,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
 
             // 2a. Reporting (to files and screen)
             if (((step % nkCfg.stepsBetweenDiagnostics) == 0) || (finalStep && nkCfg.writeDiagnosticsOnLastStep)) {
-                writeDiagnostics(step, dt, cfl, wall_clock_elapsed, physicalityCheckWallTime, lineSearchWallTime, omega, currentPhase, residualsUpToDate);
+                writeDiagnostics(step, dt, cfl, wall_clock_elapsed, omega, currentPhase, residualsUpToDate);
             }
             version(mpi_parallel) { MPI_Barrier(MPI_COMM_WORLD); }
             // Reporting to screen on progress.
@@ -880,7 +888,7 @@ void performDualTimeNewtonKrylovUpdates(int snapshotStart, double startCFL, int 
  * Authors: RJG and KAD
  * Date: 2025-09-07
  */
-void addUnsteadyTermToResiduals()
+void addUnsteadyTermToResidualVector(int ftl=0)
 {
     size_t nConserved = GlobalConfig.cqi.n;
     int bdfOrder = dtsController.bdfOrder;
@@ -895,9 +903,9 @@ void addUnsteadyTermToResiduals()
                     double c1 = 1.0/dt + 1.0/dtPrev - dt/(dtPrev*(dt+dtPrev));
                     double c2 = 1.0/dt + 1.0/dtPrev;
                     double c3 = dt/(dtPrev*(dt+dtPrev));
-                    blk.R[startIdx+ivar] += -c1*cell.U[0][ivar].re + c2*cell.U[2][ivar].re - c3*cell.U[3][ivar].re;
+                    blk.R[startIdx+ivar] += -c1*cell.U[ftl][ivar].re + c2*cell.U[2][ivar].re - c3*cell.U[3][ivar].re;
                 } else { // we assume BDF1
-                    blk.R[startIdx+ivar] += -(1.0/dt)*cell.U[0][ivar].re + (1.0/dt)*cell.U[2][ivar].re;
+                    blk.R[startIdx+ivar] += -(1.0/dt)*cell.U[ftl][ivar].re + (1.0/dt)*cell.U[2][ivar].re;
                 }
             }
             startIdx += nConserved;
@@ -997,7 +1005,7 @@ void printNewtonStepStatusToScreen(int step, double cfl, double dt, ref bool res
     alias cfg = GlobalConfig;
 
     if (!residualsUpToDate) {
-        computeResiduals(currentResiduals);
+        computeMaxResiduals(currentResiduals);
         residualsUpToDate = true;
     }
 
