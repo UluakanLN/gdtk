@@ -44,10 +44,11 @@ pnts.D = {x=d, y= R+h2}
 pnts.E = {x=0.0, y= R+h1}
 pnts.F = {x=-R-delta, y= 0.0}
 pnts.Bez1 = {x=-R-delta, y=pnts.E.y-(pnts.E.x-(-R-delta))*(h2-h1)/d}
+print("Bez1.y=", pnts.Bez1.y)
 
 east0  = Arc:new{p0=pnts.A, p1=pnts.B, centre=pnts.Cntr}
 north0 = Line:new{p0=pnts.E, p1=pnts.B}
-west0  = Bezier:new{points={pnts.F, pnts.Bez1, pnts.E}}
+west0  = Bezier:new{points={pnts.F, pnts.Bez1, pnts.E}} 
 south0 = Line:new{p0=pnts.F, p1=pnts.A}
 
 quad0 = CoonsPatch:new{north=north0, east=east0, south=south0, west=west0}
@@ -55,6 +56,9 @@ quad1 = CoonsPatch:new{p00=pnts.E, p10=pnts.B, p11=pnts.C, p01=pnts.D}
 
 grid0 = StructuredGrid:new{psurface=quad0, niv=nnEW, njv=nnNS0}
 grid1 = StructuredGrid:new{psurface=quad1, niv=nnEW, njv=nnNS1}
+
+grid0:write_to_vtk_file("grid0.vtk")
+grid1:write_to_vtk_file("grid1.vtk")
 
 blk0 = FluidBlock:new{grid=grid0, initialState=initial}
 blk1 = FluidBlock:new{grid=grid1, initialState=initial}

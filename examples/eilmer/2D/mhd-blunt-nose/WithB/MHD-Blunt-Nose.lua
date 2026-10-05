@@ -90,6 +90,9 @@ ny = 75
 grid1 = StructuredGrid:new{psurface = makePatch{north=eb, east=ab, south=da, west=de}, cfList = {north=cluster, south=cluster}, niv=nx + 1, njv=ny + 1}
 grid2 = StructuredGrid:new{psurface = makePatch{north=be, east=fe, south=cf, west=cb}, cfList = {north=inversecluster, south=inversecluster},niv= nx + 1, njv=ny + 1}
 
+grid1:write_to_vtk_file("grid1.vtk")
+grid2:write_to_vtk_file("grid2.vtk")
+
 --Create blocks
 blk_1 = FluidBlock:new{grid = grid1, initialState = Static}
 blk_2 = FluidBlock:new{grid = grid2, initialState = Static}
