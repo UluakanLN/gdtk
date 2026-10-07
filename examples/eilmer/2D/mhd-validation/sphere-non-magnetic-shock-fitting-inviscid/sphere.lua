@@ -51,18 +51,15 @@ psurf = CoonsPatch:new{
    north=Line:new{p0=d[#d], p1=c}, east=Arc:new{p0=b, p1=c, centre=a},
    south=Line:new{p0=d[1], p1=b}, west=Bezier:new{points=d}
 }
-cf_radial = RobertsFunction:new{end0=false, end1=true, beta=1.2}
 ni = 64; nj = 128
-grid = StructuredGrid:new{psurface=psurf, niv=ni+1, njv=nj+1,
-                        cfList={north=cf_radial, south=cf_radial}}
+grid = StructuredGrid:new{psurface=psurf, niv=ni+1, njv=nj+1}
 -- Shock-fitting is coordinated across four blocks
 -- that are part of a single FBArray.
 blk = FBArray:new{
    grid=grid, fillCondition=initial, label='blk',
    bcList={west=InFlowBC_ShockFitting:new{flowCondition=inflow},
-           east=WallBC_NoSlip_FixedT:new{Twall=300.0, group="loads"},
            north=OutFlowBC_Simple:new{}},
-   nib=1, njb=16
+   nib=1, njb=8
 }
 
 grid:write_to_vtk_file("grid.vtk")
@@ -74,20 +71,15 @@ t_final = 30 * body_flow_time -- allow time to establish
 --config.reacting = true
 --config.reactions_file = 'Rogers-Schexnayder-reac-file.lua'
 config.flux_calculator = "ausmdv"
-config.spatial_deriv_calc = "divergence"
-config.spatial_deriv_locn = "vertices"
 config.gasdynamic_update_scheme = "moving_grid_2_stage"
 config.grid_motion = "shock_fitting"
 config.shock_fitting_delay = 3 * body_flow_time
-config.viscous_delay = 2 * body_flow_time
 config.interpolation_delay = 10 * body_flow_time
 config.max_time = t_final
 config.max_step = 800000
 config.dt_init = 1.0e-10
-config.cfl_value = 0.3
+config.cfl_value = 0.4
 config.dt_plot = config.max_time/10.0
-config.dt_loads = config.max_time/10.0
-config.write_loads = true
 
 -- AT the beginning, the temperature in some of the cells of the grid exceeds 50,000 K. 
 -- This is not desirable since the finite rate chemistry is valid for temperatures up to 50,000 K.
