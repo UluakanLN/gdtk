@@ -39,7 +39,7 @@ inflow = FlowState:new{p=p_inf, T=T_inf, velx=u_inf, vely=0.0, massf=mass_fracti
 
 --- Define the geometry ---
 R = 0.01905  -- radius of sphere, in metres
-ni = 64; nj = 128
+ni = 256; nj = 128
 print("M_inf=", M_inf)
 local billig = require 'billig'
 local billig_patch = {}
@@ -178,16 +178,17 @@ function billig_patch.make_patch(t)
 
    return {patch=patch, points={a=a, b=b, c=c, d=d}}
 end
-bp = billig_patch.make_patch{Minf=M_inf, R=R, scale=1.5, axisymmetric=true}
-cf_circum = RobertsFunction:new{end0=false, end1=true, beta=1.01}
+bp = billig_patch.make_patch{Minf=M_inf, R=R, scale=1.2, axisymmetric=true}
+cf_circum = RobertsFunction:new{end0=false, end1=true, beta=1.1}
 -- grid = StructuredGrid:new{psurface=bp.patch, niv=121, njv=121}
-grid = StructuredGrid:new{psurface=bp.patch, niv=128+1, njv=256+1,
+grid = StructuredGrid:new{psurface=bp.patch, niv=ni+1, njv=nj+1,
                        cfList={south=cf_circum, north=cf_circum}}
 
 blk0 = FBArray:new{grid=grid, initialState=initial, label="blk",
                        bcList={west=InFlowBC_Supersonic:new{flowState=inflow},
+                       east=WallBC_NoSlip_FixedT:new{Twall=300.0, group="loads"},
                                north=OutFlowBC_Simple:new{}},
-                       nib=1, njb=8}
+                       nib=2, njb=4}
 -- We have left east and south as (default) slip-walls
 
 grid:write_to_vtk_file("grid.vtk")
@@ -196,16 +197,17 @@ config.flux_calculator = "adaptive_hanel_ausmdv" -- try using different flux cal
 config.spatial_deriv_calc = "divergence"
 config.spatial_deriv_locn = "vertices"
 body_flow_time = R/u_inf
-t_final = 20 * body_flow_time -- allow time to establish
+t_final = 60 * body_flow_time -- allow time to establish
 config.sticky_electrons = false  -- when it is disabled, the electrons are assumed to be in thermal equilibrium with the heavy species. When it is enabled, the electrons are allowed to have a different temperature from the heavy species.
 -- config.cfl_value = 0.12 -- to get better chemistry-gas-dynamics coupling
-config.cfl_value = 0.3
 config.max_time = t_final
 config.max_step = 2000000
 config.dt_init = 1.0e-10
 config.cfl_value = 0.2
 config.dt_plot = t_final/50.0
-config.dt_init = 1.0e-10
+config.dt_loads = config.max_time/50.0
+config.write_loads = true
+config.dt_history = config.dt_plot/100.0 -- added this line to hopefully have history plot more frequently 
 
 -- AT the beginning, the temperature in some of the cells of the grid exceeds 50,000 K. 
 -- This is not desirable since the finite rate chemistry is valid for temperatures up to 50,000 K.

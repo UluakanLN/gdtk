@@ -486,7 +486,7 @@ mechanism[61] = {
   p = 'e-', q = 'N2',
   rate = 'ElectronExchange',
   mode_p = 0,
-  exchange_cross_section = {a = 7.5e-20, type = 'GnoffoNeutral', b = 5.5e-24, c = -1e-28}
+  exchange_cross_section = {type = 'GnoffoNeutral', a = 7.5e-20, b = 5.5e-24, c = -1e-28}
 }
 
 mechanism[62] = {
@@ -494,7 +494,7 @@ mechanism[62] = {
   p = 'e-', q = 'O2',
   rate = 'ElectronExchange',
   mode_p = 0,
-  exchange_cross_section = {a = 2e-20, type = 'GnoffoNeutral', b = 6e-24, c = 0.0}
+  exchange_cross_section = {type = 'GnoffoNeutral', a = 2e-20, b = 6e-24, c = 0.0}
 }
 
 mechanism[63] = {
@@ -502,7 +502,7 @@ mechanism[63] = {
   p = 'e-', q = 'N',
   rate = 'ElectronExchange',
   mode_p = 0,
-  exchange_cross_section = {a = 5e-20, type = 'GnoffoNeutral', b = 0.0, c = 0.0}
+  exchange_cross_section = {type = 'GnoffoNeutral', a = 5e-20, b = 0.0, c = 0.0}
 }
 
 mechanism[64] = {
@@ -510,7 +510,7 @@ mechanism[64] = {
   p = 'e-', q = 'O',
   rate = 'ElectronExchange',
   mode_p = 0,
-  exchange_cross_section = {a = 1.2e-20, type = 'GnoffoNeutral', b = 1.7e-24, c = -2e-29}
+  exchange_cross_section = {type = 'GnoffoNeutral', a = 1.2e-20, b = 1.7e-24, c = -2e-29}
 }
 
 mechanism[65] = {
@@ -518,7 +518,7 @@ mechanism[65] = {
   p = 'e-', q = 'NO',
   rate = 'ElectronExchange',
   mode_p = 0,
-  exchange_cross_section = {a = 1e-19, type = 'GnoffoNeutral', b = 0.0, c = 0.0}
+  exchange_cross_section = {type = 'GnoffoNeutral', a = 1e-19, b = 0.0, c = 0.0}
 }
 
 mechanism[66] = {

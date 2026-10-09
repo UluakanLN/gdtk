@@ -10,7 +10,8 @@ prep:
 	e4shared --prep --job=${filename}
 
 run:
-	mpirun -np 5 e4mpi --run --job=${filename} --tindx-start=0 | tee log.txt
+	e4shared --run --job=${filename} --tindx-start=0 | tee log.txt
+	#mpirun -np 8 e4mpi --run --job=${filename} --tindx-start=0 | tee log.txt
 
 post:
 	e4shared --post --job=${filename} --vtk-xml --tindx-plot=all --add-vars="molef"
