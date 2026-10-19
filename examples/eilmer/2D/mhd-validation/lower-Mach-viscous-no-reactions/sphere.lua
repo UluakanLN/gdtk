@@ -19,20 +19,23 @@ config.flux_calculator = "adaptive_hanel_ausmdv" -- a blend of low diffusion aus
 --- Define flow conditions ---
 -- Freestream properties are taken from PhD Thesis of Alexis Lefevre 
 T_inf = 2000.0 -- K
-rho_inf = 1.0e-3 -- kg/m^3
-u_inf = 8.0e3 -- m/s
+--rho_inf = 1.0e-3 -- kg/m^3
+p_inf = 574 -- Pa
+u_inf = 8000 -- m/s
 -- Compute full inflow state from T,rho, and u
 gs= GasState:new{gmodel}
 gs.T = T_inf;
-gs.rho = rho_inf;
-gmodel:updateThermoFromRHOT(gs);
-gmodel:updateSoundSpeed(gs);
-p_inf = gs.p;
-M_inf = u_inf/gs.a;
+--gs.rho = rho_inf;
+--gmodel:updateThermoFromRHOT(gs);
+--gmodel:updateSoundSpeed(gs);
+--p_inf = gs.p;
+a_inf = 896.43739324059881610835047444705 -- m/s
+M_inf = u_inf/a_inf;
 print("M_inf=",M_inf)
 --
-initial = FlowState:new{p=p_inf, T=T_inf, velx=u_inf, vely=0.0}
-inflow = initial
+inflow = FlowState:new{p=p_inf, T=T_inf, velx=u_inf, vely=0.0}
+initial = FlowState:new{p=0.1*p_inf, T=T_inf, velx=0.0, vely=0.0}
+
 --- Build the domain as one quadrant above the sphere ---
 local billig = require 'billig'
 local billig_patch = {}
@@ -196,10 +199,11 @@ setHistoryPoint{x=-1.15*R,y=0.0} -- nearest cell ID  --> point that is farthest 
 
 body_flow_time = R/u_inf
 t_final = 10 * body_flow_time
+config.flowstate_limits_max_temp = 100000
 config.cfl_value = 0.2
 config.max_time = t_final
 config.max_step = 2000000
-config.dt_init = 1.0e-12
+config.dt_init = 1.0e-16
 config.dt_plot = t_final/20.0
 config.dt_history = config.dt_plot/50.0
 config.write_loads = true

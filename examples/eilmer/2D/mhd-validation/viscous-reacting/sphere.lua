@@ -3,41 +3,35 @@
 -- X2 Air Experimental test flow over spherical model
 --
 -- Adjusting to geometry and flow conditions used in Lefevre, Alexis PhD thesis (2022)
--- Preliminary analysis is for a viscous flow of a perfect gas 
--- This is an inviscid simulation, so viscosity is not turned on
+-- Preliminary analysis is for a viscous flow of a reacting gas 
+-- Viscous flow
 
 config.title = "X2-Experiment-Condition-C5"
 config.axisymmetric = true
-
-nsp,nmodes,gmodel=setGasModel("ideal-air-gas-model.lua")
+config.reacting = true
 config.viscous=true
-config.spatial_deriv_locn = "cells" -- default selections when viscous flow enabled
-config.spatial_deriv_calc = "least_squares" -- default selections when viscous flow enabled
 
-config.flux_calculator = "adaptive_hanel_ausmdv" -- a blend of low diffusion ausmd and dissipative hanel schemes / appropriate for high speed flows
-config.strict_shock_detector = "false" -- required for non-discrete shock detection / taken from gdtk/examples/eilmer/2D/swbli/adaptive-flux-test
-config.compression_tolerence = -0.2 -- A negative value indicates a compression. When an adaptive flux calculator is used and the shock detector is triggered,
-                                    -- the more-dissipative flux calculation will be used in place of the default low-dissipation calculation. 
-
-
+nsp,nmodes,gmodel=setGasModel('air-11sp-2T.gas')
+config.reactions_file = 'air-11sp-20r-2T.chem'
+config.energy_exchange_file = 'air-VT.exch'
 
 --- Define flow conditions ---
 -- Freestream properties are taken from PhD Thesis of Alexis Lefevre 
 T_inf = 2000.0 -- K
-rho_inf = 1.0e-3 -- kg/m^3
+--rho_inf = 1.0e-3 -- kg/m^3
+p_inf = 574 -- Pa
 u_inf = 13.7e3 -- m/s
--- Compute full inflow state from T,rho, and u
-gs= GasState:new{gmodel}
-gs.T = T_inf;
-gs.rho = rho_inf;
-gmodel:updateThermoFromRHOT(gs);
-gmodel:updateSoundSpeed(gs);
-p_inf = gs.p;
-M_inf = u_inf/gs.a;
-print("M_inf=",M_inf)
---
-initial = FlowState:new{p=p_inf, T=T_inf, velx=u_inf, vely=0.0}
-inflow = initial
+mf_inf = {['N2']=0.767, ['O2']=0.233} -- mass fractions of N2, O2, NO, N, O, e
+a_inf = 896.43739324059881610835047444705 -- m/s
+M_inf = u_inf/a_inf;
+inflow = FlowState:new{p=p_inf, T=T_inf, T_modes={T_inf},velx=u_inf, massf=mf_inf}
+initial = FlowState:new{p=0.1*p_inf, T=T_inf, T_modes={T_inf}, velx=0.0, massf=mf_inf}
+
+config.spatial_deriv_locn = "cells" -- default selections when viscous flow enabled
+config.spatial_deriv_calc = "least_squares" -- default selections when viscous flow enabled
+config.flux_calculator = "adaptive_hanel_ausmdv" -- a blend of low diffusion ausmd and dissipative hanel schemes / appropriate for high speed flows
+
+
 --- Build the domain as one quadrant above the sphere ---
 local billig = require 'billig'
 local billig_patch = {}
@@ -200,7 +194,7 @@ setHistoryPoint{x=-1.10*R,y=0.0} -- nearest cell ID
 setHistoryPoint{x=-1.15*R,y=0.0} -- nearest cell ID  --> point that is farthest from the stagnation point on the sphere surface
 
 body_flow_time = R/u_inf
-t_final = 20 * body_flow_time 
+t_final = 20 * body_flow_time -- allow time to establish
 config.cfl_value = 0.15
 config.max_time = t_final
 config.max_step = 2500000
@@ -209,15 +203,15 @@ config.dt_plot = t_final/20.0
 config.dt_history = config.dt_plot/50.0
 config.write_loads = true
 config.dt_loads = config.dt_plot/50.0
-config.viscous_signal_factor = 0.5
+config.viscous_signal_factor = 0.2
 
 -- AT the beginning, the temperature in some of the cells of the grid exceeds 50,000 K. 
 -- This is not desirable since the finite rate chemistry is valid for temperatures up to 50,000 K.
 -- Report invalid cells, adjust them, but continue to run the simulation without interruption. 
-config.max_invalid_cells = nx*ny*0.02 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
+config.max_invalid_cells = nx*ny*0.01 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
 config.adjust_invalid_cell_data = true 
 config.report_invalid_cells = false -- This will speed up sim
--- config.sticky_electrons = true -- When it is disabled, the electrons are assumed to be in thermal equilibrium with the heavy species. 
+--config.sticky_electrons = true -- When it is disabled, the electrons are assumed to be in thermal equilibrium with the heavy species. 
                                   -- When it is enabled, the electrons are allowed to have a different temperature from the heavy species.
 
 -- Take snapshots every 1000 step and store the last two of them

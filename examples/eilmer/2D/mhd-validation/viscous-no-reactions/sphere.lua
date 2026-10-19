@@ -20,20 +20,23 @@ config.flux_calculator = "adaptive_hanel_ausmdv" -- a blend of low diffusion aus
 --- Define flow conditions ---
 -- Freestream properties are taken from PhD Thesis of Alexis Lefevre 
 T_inf = 2000.0 -- K
-rho_inf = 1.0e-3 -- kg/m^3
+--rho_inf = 1.0e-3 -- kg/m^3
+p_inf = 574 -- Pa
 u_inf = 13.7e3 -- m/s
 -- Compute full inflow state from T,rho, and u
 gs= GasState:new{gmodel}
 gs.T = T_inf;
-gs.rho = rho_inf;
-gmodel:updateThermoFromRHOT(gs);
-gmodel:updateSoundSpeed(gs);
-p_inf = gs.p;
-M_inf = u_inf/gs.a;
+--gs.rho = rho_inf;
+--gmodel:updateThermoFromRHOT(gs);
+--gmodel:updateSoundSpeed(gs);
+--p_inf = gs.p;
+a_inf = 896.43739324059881610835047444705 -- m/s
+M_inf = u_inf/a_inf;
 print("M_inf=",M_inf)
 --
-initial = FlowState:new{p=p_inf, T=T_inf, velx=u_inf, vely=0.0}
-inflow = initial
+inflow = FlowState:new{p=p_inf, T=T_inf, velx=u_inf, vely=0.0}
+initial = FlowState:new{p=0.3*p_inf, T=T_inf, velx=0.0, vely=0.0}
+
 --- Build the domain as one quadrant above the sphere ---
 local billig = require 'billig'
 local billig_patch = {}
@@ -197,10 +200,11 @@ setHistoryPoint{x=-1.15*R,y=0.0} -- nearest cell ID  --> point that is farthest 
 
 body_flow_time = R/u_inf
 t_final = 20 * body_flow_time -- allow time to establish
-config.cfl_value = 0.15
+config.flowstate_limits_max_temp = 100000
+config.cfl_value = 0.2
 config.max_time = t_final
 config.max_step = 2500000
-config.dt_init = 1.0e-12
+config.dt_init = 1.0e-16
 config.dt_plot = t_final/20.0
 config.dt_history = config.dt_plot/50.0
 config.write_loads = true
@@ -210,9 +214,9 @@ config.viscous_signal_factor = 0.2
 -- AT the beginning, the temperature in some of the cells of the grid exceeds 50,000 K. 
 -- This is not desirable since the finite rate chemistry is valid for temperatures up to 50,000 K.
 -- Report invalid cells, adjust them, but continue to run the simulation without interruption. 
-config.max_invalid_cells = nx*ny*0.02 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
-config.adjust_invalid_cell_data = true 
-config.report_invalid_cells = false -- This will speed up sim
+--config.max_invalid_cells = nx*ny*0.1 --means simulation will only terminate if over a quarter of cells in each subgrid are invalid (?)
+--config.adjust_invalid_cell_data = true 
+--config.report_invalid_cells = false -- This will speed up sim
 --config.sticky_electrons = true -- When it is disabled, the electrons are assumed to be in thermal equilibrium with the heavy species. 
                                   -- When it is enabled, the electrons are allowed to have a different temperature from the heavy species.
 
