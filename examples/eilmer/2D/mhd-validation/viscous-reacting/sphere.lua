@@ -25,7 +25,8 @@ mf_inf = {['N2']=0.767, ['O2']=0.233} -- mass fractions of N2, O2, NO, N, O, e
 a_inf = 896.43739324059881610835047444705 -- m/s
 M_inf = u_inf/a_inf;
 inflow = FlowState:new{p=p_inf, T=T_inf, T_modes={T_inf},velx=u_inf, massf=mf_inf}
-initial = FlowState:new{p=0.1*p_inf, T=T_inf, T_modes={T_inf}, velx=0.0, massf=mf_inf}
+initial = inflow
+--initial = FlowState:new{p=0.1*p_inf, T=T_inf, T_modes={T_inf}, velx=0.0, massf=mf_inf}
 
 config.spatial_deriv_locn = "cells" -- default selections when viscous flow enabled
 config.spatial_deriv_calc = "least_squares" -- default selections when viscous flow enabled
